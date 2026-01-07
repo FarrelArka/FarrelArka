@@ -9,20 +9,21 @@ permissions:
   contents: write
 
 jobs:
-  generate:
+  snake:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Generate snake
+      - name: Generate snake SVG
         uses: Platane/snk@v3
         with:
           github_user_name: FarrelArka
           outputs: |
             dist/github-snake.svg
 
-      - name: Push snake to output branch
-        uses: crazy-max/ghaction-github-pages@v3
+      - name: Deploy snake to output branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: output
+          publish_dir: dist
+          force_orphan: true

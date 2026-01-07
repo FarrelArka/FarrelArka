@@ -54,6 +54,11 @@
 
 ---
 
+## 🐍 Contribution Snake
+<p align="center">
+  <img src="https://raw.githubusercontent.com/FarrelArka/FarrelArka/output/github-snake.svg" />
+</p>
+
 
 ---
 
